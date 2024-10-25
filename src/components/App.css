@@ -1,0 +1,30 @@
+table,
+th,
+td {
+  border-top: 1px solid black;
+  border-collapse: collapse;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+thead {
+  background-color: black;
+  color: white;
+}
+
+thead td {
+  border: 1px solid white;
+}
+
+#children {
+  background-color: aqua;
+  border: 1px solid black;
+}
+
+#delete {
+  background-color: red;
+  border: 1px solid black;
+}
