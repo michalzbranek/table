@@ -8,7 +8,7 @@ function TableComponent({ data, uuid, showChildrens }: TableComponentProps) {
       {showChildrens && (
         <tr>
           <td>
-            <table style={{ marginLeft: "100px", width: "800px" }}>
+            <table style={{ width: "800px" }}>
               <InnerHeaderComponent data={data} uuid={uuid} />
               <tbody>
                 {data[`${uuid}`].childrens.length !== 0 &&
