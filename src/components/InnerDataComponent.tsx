@@ -7,23 +7,27 @@ function InnerDataComponent({ data, uuid }: InnerDataProps) {
   const handleShowHide = (uuid: string) => dispatch(showData(uuid));
 
   return (
-    <tr>
+    <tr className="table-row">
       {data[`${uuid}`] !== undefined &&
       data[`${uuid}`].childrens.length !== 0 ? (
-        <td id="children" onClick={() => handleShowHide(uuid)}></td>
+        <td id="children" className="btn-icon" onClick={() => handleShowHide(uuid)}>
+          {data[`${uuid}`].showChildrens ? "−" : "+"}
+        </td>
       ) : (
-        <td style={{ border: "1px solid black", backgroundColor: "grey" }}></td>
+        <td className="empty-cell"></td>
       )}
       {data[`${uuid}`] !== undefined &&
         Object.keys(data[`${uuid}`].data).map(
           (header: string, index: number) =>
             header !== "uuid" && (
-              <td key={index} style={{ border: "1px solid black" }}>
+              <td key={index}>
                 {data[`${uuid}`].data[header as keyof ProcessedData]}
               </td>
             )
         )}
-      <td id="delete" onClick={() => handleDelete(uuid)}></td>
+      <td id="delete" className="btn-icon" onClick={() => handleDelete(uuid)}>
+        ×
+      </td>
     </tr>
   );
 }

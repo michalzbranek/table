@@ -7,8 +7,8 @@ function TableComponent({ data, uuid, showChildrens }: TableComponentProps) {
       <InnerDataComponent data={data} uuid={uuid} />
       {showChildrens && (
         <tr>
-          <td>
-            <table style={{ width: "800px" }}>
+          <td colSpan={100} className="nested-table-container">
+            <table className="nested-table" width="100%">
               <InnerHeaderComponent data={data} uuid={uuid} />
               <tbody>
                 {data[`${uuid}`].childrens.length !== 0 &&

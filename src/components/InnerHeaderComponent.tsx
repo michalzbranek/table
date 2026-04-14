@@ -2,13 +2,13 @@ function InnerHeaderComponent({ data, uuid }: InnerHeaderProps) {
   return (
     <thead>
       <tr>
-        {data[`${uuid}`].childrens.length !== 0 && <td>children</td>}
+        {data[`${uuid}`].childrens.length !== 0 && <th>Rozbalit</th>}
         {data[`${uuid}`].childrens.length !== 0 &&
           Object.keys(data[`${data[`${uuid}`].childrens[0]}`].data).map(
             (header: string, index: number) =>
-              header !== "uuid" && <td key={index}>{header}</td>
+              header !== "uuid" && <th key={index}>{header}</th>
           )}
-        {data[`${uuid}`].childrens.length !== 0 && <td>delete</td>}
+        {data[`${uuid}`].childrens.length !== 0 && <th>Smazat</th>}
       </tr>
     </thead>
   );
